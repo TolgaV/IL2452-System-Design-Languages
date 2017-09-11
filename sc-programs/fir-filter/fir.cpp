@@ -16,7 +16,7 @@ void Fir::fir_main(){
 	
 	while (true) {
 		//Read Inputs
-		for (int i = 5 - 1; i > 0; i--) {
+		for (int i = 4; i > 0; i--) {
 			taps[i] = taps[i - 1];
 		}
 		taps[0] = inp.read();

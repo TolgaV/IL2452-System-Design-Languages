@@ -5,9 +5,11 @@
 void Tb::source() {
 	//Reset, we reset the output ports of the testbench initially
 	inp.write(0);
-	rst.write(0);
-	wait();
+	//rst.write(0);
 	rst.write(1);
+	wait();
+	//rst.write(1);
+	rst.write(0);
 	wait();
 
 	//Read Inputs
