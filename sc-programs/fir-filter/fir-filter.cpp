@@ -1,5 +1,6 @@
 // fir-filter.cpp : Defines the entry point for the console application.
 //
+
 #include "stdafx.h"
 #include "systemc.h"
 
@@ -11,7 +12,7 @@ const sc_uint<8> coef[5] = {
 	18
 };
 
-SC_MODULE(fir) {
+SC_MODULE(Fir) {
 	sc_in<bool> clk;
 	sc_in<bool> rst;
 	sc_in< sc_int<16> > inp;
@@ -19,7 +20,7 @@ SC_MODULE(fir) {
 
 	void fir_main();
 
-	SC_CTOR(fir) {
+	SC_CTOR(Fir) {
 		SC_CTHREAD(fir_main, clk.pos());	//SC_CTHREAD has two arguments, unlike SC_METHOD or SC_THREAD
 		//SC_CTHREAD is only sensitive to clock, so there is no need to define a sensitivity list
 		reset_signal_is(rst, true);			//(name of reset signal, its initial state)
@@ -27,7 +28,7 @@ SC_MODULE(fir) {
 };
 
 // FIR Main Thread fir_main(). It'll be a clocked thread (CTHREAD)
-void fir::fir_main(void) {			//void is redundant but a good practice
+void Fir::fir_main(void) {			//void is redundant but a good practice
 	//Shift register declaration
 	sc_int<16> taps[5];//same type as the input port (sc_int<16>)
 	
@@ -62,4 +63,18 @@ void fir::fir_main(void) {			//void is redundant but a good practice
 		outp.write(val);
 		wait();	//wait one cycle and repeat
 	}
+}
+
+/* Without sc_main program won't know where to start, int sc_main~int main
+https://stackoverflow.com/questions/4845410/error-lnk2019-unresolved-external-symbol-main-referenced-in-function-tmainc
+*/
+
+int sc_main(int argc, char* argv[]) {
+	
+	
+	Fir fir("fir");
+
+	sc_start();
+	system("pause");
+	return 0;
 }
