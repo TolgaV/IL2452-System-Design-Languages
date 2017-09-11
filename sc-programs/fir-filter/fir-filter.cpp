@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include "systemc.h"
+#include <iostream>
 
 const sc_uint<8> coef[5] = {
 	18,
@@ -72,7 +73,7 @@ https://stackoverflow.com/questions/4845410/error-lnk2019-unresolved-external-sy
 int sc_main(int argc, char* argv[]) {
 	
 	
-	Fir fir("fir");
+	Fir Fir("fir");
 
 	sc_start();
 	system("pause");
