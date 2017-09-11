@@ -1,4 +1,5 @@
 //monitor.h
+//Monitor example http://electrosofts.com/systemC/index.html
 #pragma once
 #include "stdafx.h"
 #include "systemc.h"
