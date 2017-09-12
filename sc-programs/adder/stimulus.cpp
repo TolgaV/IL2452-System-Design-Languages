@@ -11,5 +11,8 @@ void Stimulus::generate() {
 	wait();
 	a = 100; b = -100;
 	wait();
+	
+	//system("pause");
+
 	sc_stop();			//stop simulation
 }
