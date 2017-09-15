@@ -71,8 +71,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\systemc-2.3.1a\src</IncludePath>
-    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;C:\systemc-2.3.1a\msvc80\SystemC\Debug</LibraryPath>
+    <IncludePath>C:\SystemC\src;$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\systemc-2.3.1a\src</IncludePath>
+    <LibraryPath>C:\SystemC\msvc80\SystemC\Debug;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;C:\systemc-2.3.1a\msvc80\SystemC\Debug</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
