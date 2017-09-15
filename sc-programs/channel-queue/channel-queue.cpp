@@ -20,6 +20,7 @@ public:
 			std::cout << queue.read();
 	}
 };
+
 Test *t = NULL;
 
 
