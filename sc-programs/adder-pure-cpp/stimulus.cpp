@@ -14,5 +14,5 @@ void Stimulus::generate() {
 Stimulus::Stimulus(sc_module_name _name)
 	:sc_module(_name) {
 	SC_THREAD(generate);
-	sensitive << clock.pos;
+	sensitive << clock.pos();	
 }
