@@ -5,14 +5,17 @@
 #include <iostream>
 #include <systemc.h>
 
+/* Constructor moved to counter.cpp */
+/*
 Counter::Counter(sc_module_name _name, int _mod, int _cnt)
-	:sc_module(_name), mod(_mod), cnt(0) {
+	:sc_module(_name), modulo(5), cnt(0) {
 	SC_METHOD(count);
-	sensitive << clk.pos();
+	sensitive << clock.pos();
 }
-
+*/
+/* Definition of count() method */
 void Counter::count() {
-
+		
 	if (reset == true)
 		cnt = 0;
 	else {
@@ -21,25 +24,8 @@ void Counter::count() {
 			cnt = 0;
 	}
 	q = cnt;
-
 	std::cout << "Count is: " << q << "at time: " << sc_time_stamp() << endl;
 }
-	/*
-		cnt++;
-	while (true) {
-		wait();
-		std::cout << "Count is: " << cnt << endl;
-		if (reset == true) {
-			cnt = 0;
-		}
-		else {
-			cnt++;
-			if (cnt == modulo) cnt = 0;
-		}
-		q = cnt;
-	}
-}*/
-
 
 	/* THREAD VERSION */
 /*/

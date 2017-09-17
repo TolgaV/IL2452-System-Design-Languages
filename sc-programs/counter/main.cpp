@@ -38,3 +38,7 @@ int sc_main(int argc, char* argv[])
 	sc_start();
 	return 0;
 }
+
+/* For getting pure C++ implementation working make 
+sure instance of Counter; ctr0 is initialized correctly.
+*/

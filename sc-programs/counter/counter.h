@@ -1,10 +1,7 @@
 //counter.h
 #pragma once
 #include "stdafx.h"
-#include "systemc.h"
-//#include <systemc.h>
-//#include "systemc.h"
-/*
+
 SC_MODULE(Counter) {
 public:
 	sc_in<bool> clock, reset;
@@ -17,11 +14,11 @@ public:
 		sensitive << clock, reset;
 	}
 private:
-	/* To be initialized by constructor *//*
+	/* To be initialized by constructor */
 	int modulo;
 	int cnt;
 };
-*/
+
 	/* THREAD VERSION */
 /*SC_MODULE(Counter) {
 public:
@@ -38,8 +35,9 @@ private:
 	int modulo;
 	int cnt;
 };*/
-	/* PURE C++ IMPLEMENTATION */
 
+	/* PURE C++ VERSION */
+/*
 class Counter : public sc_module {
 public:
 	sc_in<bool> clock, reset;
@@ -47,13 +45,15 @@ public:
 
 
 	Counter(sc_module_name _name, int _mod, int _cnt);
-//Possible to move constructor to .cpp file.
-//Just cut the curly curly bracket region.
-//		:sc_module(_name), modulo(5), cnt(0) {
-//		SC_METHOD(count);
-//		sensitive << clk.pos();
-//	}
-	//SC_HAS_PROCESS(name-of-constructor/function)
+/*
+Possible to move constructor to .cpp file.
+Just cut the curly curly bracket region.
+		:sc_module(_name), modulo(5), cnt(0) {
+		SC_METHOD(count);
+		sensitive << clk.pos();
+	}
+	SC_HAS_PROCESS(name-of-constructor/function)
+*//*
 	SC_HAS_PROCESS(Counter);
 
 private:
@@ -63,22 +63,5 @@ private:
 	const int modulo;
 	int cnt;
 
-};
-	/*
-class Counter : public sc_module {
-public:
-	sc_in<bool> clock, reset;
-	sc_out<int> q;
-
-	Counter::Counter(sc_module_name name, int mod)
-		:sc_module(name), cnt(0), modulo(mod) {
-		SC_THREAD(count);
-		sensitive << clk.pos();
-	}
-	SC_HAS_PROCESS(Counter);
-private:
-	void count();
-	int cnt;
-	const int modulo;
 };
 */
