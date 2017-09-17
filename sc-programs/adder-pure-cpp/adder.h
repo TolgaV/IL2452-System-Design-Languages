@@ -2,7 +2,7 @@
 #include "stdafx.h"
 #include "systemc.h"
 
-class Adder :public sc_module {
+class Adder : public sc_module {
 public:
 	sc_in<int> a;
 	sc_in<int> b;
@@ -10,6 +10,6 @@ public:
 
 	void compute();
 
-	Adder(sc_module_name _name) :sc_module(_name) {};
+	Adder(sc_module_name _name);
 	SC_HAS_PROCESS(Adder);
 };

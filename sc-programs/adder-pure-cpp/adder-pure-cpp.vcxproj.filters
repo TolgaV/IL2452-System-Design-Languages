@@ -27,12 +27,18 @@
     <ClInclude Include="adder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="stimulus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="adder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stimulus.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
