@@ -5,7 +5,7 @@
 #include <iostream>
 #include <systemc.h>
 
-/* Constructor moved to counter.cpp */
+/* Constructor moved to counter.cpp, for pure C++ implementation */
 /*
 Counter::Counter(sc_module_name _name, int _mod, int _cnt)
 	:sc_module(_name), modulo(5), cnt(0) {
@@ -14,6 +14,8 @@ Counter::Counter(sc_module_name _name, int _mod, int _cnt)
 }
 */
 /* Definition of count() method */
+	/* METHOD VERSION */
+/*
 void Counter::count() {
 		
 	if (reset == true)
@@ -26,10 +28,21 @@ void Counter::count() {
 	q = cnt;
 	std::cout << "Count is: " << q << "at time: " << sc_time_stamp() << endl;
 }
-
+*/
 	/* THREAD VERSION */
-/*/
-Counter::Counter(sc_module_name name, int mod)
-	:sc_module(name), cnt(0), modulo(mod) {
-		sensitive << clk.pos();
-}*/
+
+void Counter::count() {
+	while (true) {
+		wait();
+		if (reset == true)
+			cnt = 0;
+		else
+			if (cnt == modulo)
+				cnt = 0;
+			else
+				cnt++;
+		q = cnt;
+		std::cout << "Count is: " << q << "at time: " << sc_time_stamp() << endl;
+
+	}
+}
