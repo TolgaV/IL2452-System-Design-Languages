@@ -26,6 +26,8 @@ public:
 	sc_out<int> q;
 
 	void count();
+//Member initializer, if not initialized here, gotta initialize
+//when instantiating an object from the class.
 
 	SC_CTOR(Counter) : modulo(5), cnt(0) {
 		SC_THREAD(count);
