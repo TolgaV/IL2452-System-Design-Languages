@@ -157,6 +157,7 @@
     <ClInclude Include="testbench.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="monitor.cpp" />
     <ClCompile Include="or-gate.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
