@@ -1,27 +1,33 @@
 #pragma once
 #include "stdafx.h"
 
-class w_if : public sc_interface {
-//Default access specifier is private so we have to
-//explicitly state public.
+/* Declaration of interface to Write to Channel */
+class w_if : virtual public sc_interface{
 public:
-	virtual void cwrite(char) = 0;
+	virtual void write(char) = 0;
+};
+/* Declaration of interface to Read from Channel */
+class r_if : virtual public sc_interface {
+public:
+	virtual void read(char&) = 0;
 };
 
-class r_if : public sc_interface {
-public:
-	virtual void cread(char&) = 0;
-};
-
-class hchan : public sc_module, public w_if, public r_if {
+/* Definition of the channel */
+class Hchan : public sc_module, public w_if, public r_if{
 private:
 	char carrier;
 public:
-	hchan(sc_module_name name) : sc_module(name) {}
-	SC_HAS_PROCESS(hchan);
-	void cwrite(char c) {
-		carrier = c;
+	sc_port<w_if> input{ "channel input" };
+	sc_port<r_if> output{ "channel output" };
+	sc_in<bool> clock;
+
+	Hchan(sc_module_name name) : sc_module(name) {
+		input->write;
+		output->read;
+		carrier = NULL;
 	}
-	void cread(char &c) {
-	}
+	SC_HAS_PROCESS(Hchan);
+	
+	void write(char c);
+	void read(char &c);
 };

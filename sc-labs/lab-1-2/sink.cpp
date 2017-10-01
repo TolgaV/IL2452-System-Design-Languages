@@ -8,7 +8,7 @@ void sink::sink_p() {
 
 	while (true)
 	{
-		in->cread(c);
+		in->read(c);
 		c = (char)toupper(c);
 		cout << c << flush;
 	} 

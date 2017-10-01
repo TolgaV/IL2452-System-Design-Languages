@@ -5,6 +5,6 @@ void source::source_p() {
 	const char *alphabet = "abcdefghijklmnopqrstuvwxyz\n";
 
 	while (*alphabet) {
-		out->cwrite(*alphabet++);
+		out->write(*alphabet++);
 	}
 }
