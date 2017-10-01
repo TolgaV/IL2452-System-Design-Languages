@@ -23,7 +23,8 @@ int sc_main(int argc, char *argv[])
 	mysnk->in(*mychan);
 	mysrc->clock(TestClk);
 	mysnk->clock(TestClk);
-	sc_start(100, SC_NS);
+	sc_start();
+	//sc_start(100, SC_NS);
     return 0;
 }
 
