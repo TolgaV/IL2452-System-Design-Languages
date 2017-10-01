@@ -9,6 +9,7 @@ SC_MODULE(monitor) {
 
 	SC_CTOR(monitor) {
 		SC_METHOD(prc_monitor);
+		//sensitive << m_c;
 		sensitive << m_a, m_b, m_c;
 	}
 };
