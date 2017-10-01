@@ -151,12 +151,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="channel.h" />
+    <ClInclude Include="sink.h" />
     <ClInclude Include="source.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="lab-1-2.cpp" />
+    <ClCompile Include="sink.cpp" />
     <ClCompile Include="source.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

@@ -13,7 +13,7 @@ public:
 	virtual void cread(char&) = 0;
 };
 
-class hchan : public sc_interface, public w_if, public r_if {
+class hchan : public sc_module, public w_if, public r_if {
 private:
 	char carrier;
 public:

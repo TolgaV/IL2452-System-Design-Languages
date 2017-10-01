@@ -1,0 +1,15 @@
+#include "stdafx.h"
+#include "sink.h"
+#include <cctype>
+
+void sink::sink_p() {
+	char c;
+	cout << endl << endl;
+
+	while (true)
+	{
+		in->cread(c);
+		c = (char)toupper(c);
+		cout << c << flush;
+	} 
+}
