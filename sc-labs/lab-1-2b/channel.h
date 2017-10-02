@@ -1,6 +1,6 @@
 #pragma once
 #include "stdafx.h"
-/*
+
 class w_if : virtual public sc_interface {
 public:
 	virtual void write(char) = 0;
@@ -24,4 +24,3 @@ public:
 private:
 	char temp;
 };
-*/
