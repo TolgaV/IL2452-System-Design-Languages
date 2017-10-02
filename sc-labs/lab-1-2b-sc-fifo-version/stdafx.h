@@ -7,7 +7,7 @@
 
 #include "targetver.h"
 #define _CRT_SECURE_NO_WARNINGS
-
+#include <systemc.h>
 #include <stdio.h>
 #include <tchar.h>
 
