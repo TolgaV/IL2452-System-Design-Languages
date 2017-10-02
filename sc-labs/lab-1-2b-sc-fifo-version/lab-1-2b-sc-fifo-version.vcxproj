@@ -150,18 +150,15 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\lab-1-2b\channel.h" />
-    <ClInclude Include="..\lab-1-2b\sink.h" />
-    <ClInclude Include="..\lab-1-2b\source.h" />
-    <ClInclude Include="..\lab-1-2b\stdafx.h" />
+    <ClInclude Include="sink.h" />
+    <ClInclude Include="source.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\lab-1-2b\channel.cpp" />
-    <ClCompile Include="..\lab-1-2b\main.cpp" />
-    <ClCompile Include="..\lab-1-2b\sink.cpp" />
-    <ClCompile Include="..\lab-1-2b\source.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="sink.cpp" />
+    <ClCompile Include="source.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
