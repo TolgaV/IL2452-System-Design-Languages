@@ -14,6 +14,7 @@ void source::source_p()
 	while (*alphabet)
 	{
 		out->write(*alphabet++);
+		//out->write(*alphabet++);
 		wait();
 	}
 	std::cout << "************************************" << endl;

@@ -4,7 +4,10 @@
 #include"channel.h"
 class sink : public sc_module {
 public:
-	sc_port<r_if> in;
+	//sc_fifo_in is the port
+	//sc_fifo is the primitive channel
+	//sc_port<r_if> in;
+	sc_port<sc_fifo_in_if<char>, 0> in{ "sinkFifoIn" };
 	sc_in<bool> clock;
 
 	SC_HAS_PROCESS(sink);
