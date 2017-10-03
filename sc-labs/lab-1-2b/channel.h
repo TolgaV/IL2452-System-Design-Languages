@@ -19,8 +19,13 @@ public:
 	void register_port(sc_port_base & port_, const char * if_typename_);
 
 	Channel(sc_module_name name): sc_module(name){
-		
+		ctr++;
+		cout << "\n\n";
+		cout << "Channel object instantiated with name: \"" << name << "\"" <<endl <<
+			"Total Channel objects = " << ctr << endl;
+		cout << "\n\n";
 	}
 private:
 	char temp;
+	int ctr = 0;
 };
