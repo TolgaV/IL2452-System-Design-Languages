@@ -11,6 +11,8 @@ SC_MODULE(or_gate) {
 
 	SC_CTOR(or_gate) {
 		SC_METHOD(prc_or_gate);
+
+		//in the Stimulus we change a and b at the same time, that is why we see wrong output (0 is outputted twice) so ignoring first output would've solved it
 		sensitive << a << b;
 	}
 };
