@@ -9,6 +9,8 @@ void sink::sink_p()
 
 	while (true)
 	{
+		/* We can use read() method which belongs to r_if class since channel.h is included */
+		
 		in->read(c);
 		c = (char)toupper(c);
 		cout << endl << "Sink received: ";

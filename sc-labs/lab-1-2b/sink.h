@@ -4,7 +4,7 @@
 #include"channel.h"
 class sink : public sc_module {
 public:
-	sc_port<r_if> in;
+	sc_port<r_if> in{ "sinkInputPort" };
 	sc_in<bool> clock;
 
 	SC_HAS_PROCESS(sink);
