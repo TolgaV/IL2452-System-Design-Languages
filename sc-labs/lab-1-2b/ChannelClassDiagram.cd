@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Channel inherited from sc_module, w_if and r_if">
+    <Position X="2.052" Y="3.125" Height="0.5" Width="1.7" />
+  </Comment>
+  <Comment CommentText="temp is the only private data member">
+    <Position X="2.042" Y="3.74" Height="0.5" Width="1.7" />
+  </Comment>
+  <Comment CommentText="This class has 4 methods, Channel is the constructor, read and write are inherited from r_if and w_if, register_port method is a member function">
+    <Position X="2.052" Y="4.333" Height="1.146" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Both w_if and r_if inherited from sc_interface, since this is the usual practice">
+    <Position X="2.062" Y="0.5" Height="0.792" Width="1.419" />
+  </Comment>
+  <Comment CommentText="register_port is inherited from sc_interface as a virtual method, but overriden. It is used for checking when ports and interfaces are bound together.">
+    <Position X="2.063" Y="5.521" Height="1.292" Width="1.7" />
+  </Comment>
+  <Class Name="w_if">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>channel.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="r_if">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>channel.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Channel">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAgAAAAAAAAACAAAAAAAAAAAACAAQAAAAAAAAA=</HashCode>
+      <FileName>channel.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
