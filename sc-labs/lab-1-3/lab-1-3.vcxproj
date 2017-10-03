@@ -150,17 +150,29 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="arbiter.h" />
+    <ClInclude Include="bus.h" />
+    <ClInclude Include="change-case.h" />
+    <ClInclude Include="filter.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="testbench.h" />
+    <ClInclude Include="uart.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lab-1-3.cpp" />
+    <ClCompile Include="arbiter.cpp" />
+    <ClCompile Include="bus.cpp" />
+    <ClCompile Include="change-case.cpp" />
+    <ClCompile Include="filter.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="testbench.cpp" />
+    <ClCompile Include="uart.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
