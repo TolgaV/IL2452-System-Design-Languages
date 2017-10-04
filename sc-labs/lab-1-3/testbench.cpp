@@ -18,5 +18,5 @@ void driver::prc_drive() {
 
 void monitor::prc_monitor() {
 
-	cout << "AT " << "sc_simulation_time()" << " UART output is : " << m_char << endl;
+	cout << "AT " << sc_simulation_time() << " UART output is : " << m_char << endl;
 }
