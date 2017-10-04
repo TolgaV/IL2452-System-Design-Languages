@@ -8,7 +8,7 @@ void Filter::filterIt() {
 		c = in->read();			//read a character from FIFO port
 
 		if ((c == 's') | (c == 'y') | (c == 't') | (c == 'e') | (c == 'm') | (c == 'c')) {
-			c == '#';
+			c = '#';
 		}
 		else {
 
