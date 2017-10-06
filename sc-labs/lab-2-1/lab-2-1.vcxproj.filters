@@ -16,12 +16,24 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
+    <Text Include="Resources\T1.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Resources\T2.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Resources\T3.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ram.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

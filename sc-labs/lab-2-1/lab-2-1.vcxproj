@@ -148,6 +148,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
+    <Text Include="Resources\T1.txt" />
+    <Text Include="Resources\T2.txt" />
+    <Text Include="Resources\T3.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ram.h" />
