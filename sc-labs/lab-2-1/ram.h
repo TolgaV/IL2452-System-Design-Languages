@@ -1,7 +1,7 @@
 #pragma once
 #include "stdafx.h"
 #include <fstream> //Stream class to read from filesm, input file stream variable is called "ifstream"
-
+#include <string>
 //Maybe use a struct to keep address thingy.sfgdfzxnhgc,'j;lghmh;kcfnb;kxfthnb.x,knb
 class RamAddress {
 public:
