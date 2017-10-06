@@ -28,7 +28,6 @@ public:
 
 	void read();
 	void write();
-	void loadInitialize();
 
 	//Initialize the constructor as RandomAccessMemory(name, size)
 	RandomAccessMemory(sc_module_name name, int size) :sc_module(name), memorySize(size) {
@@ -36,6 +35,7 @@ public:
 
 		cout << "\n\n\nLoading initial data... \n";
 		loadInitialize();
+
 		int *address = new int[memorySize];		//Array to keep address values
 		ra = new RamAddress(size);
 		ra->ram_address = somechar here, this assignment to be done via the function;
@@ -46,6 +46,11 @@ public:
 	}
 
 private:
+	/* Private Member Functions */
+	void loadInitialize();
+	void readFile();
+
+	/* Private Data Members */
 	bool enable;
 	bool mode;
 	//sc_int<32> address;
