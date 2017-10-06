@@ -44,5 +44,8 @@
     <ClCompile Include="lab-2-1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ram.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
