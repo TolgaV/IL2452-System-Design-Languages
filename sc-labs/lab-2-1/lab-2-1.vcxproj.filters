@@ -41,10 +41,10 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="lab-2-1.cpp">
+    <ClCompile Include="ram.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ram.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
