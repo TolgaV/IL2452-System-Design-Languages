@@ -21,12 +21,6 @@ public:
 		ram_address_valid = new bool[ram_memory_size];
 		ram_address = new int[ram_memory_size];
 		
-		/*ram_address_used = new bool[ram_memory_size];
-
-		for (int i = 0; i < ram_memory_size; i++) {
-			ram_address_used[i] = false;
-			p_dataAddress[i] = &p_data[i];
-		}*/
 		cout << "\nRamAddress Object Created.\n";
 	}
 //private:
@@ -36,7 +30,8 @@ public:
 class RandomAccessMemory : public sc_module {
 public:
 	sc_inout<sc_int<8>> data{ "DATA" };			//8-bit bidirectional data port
-	sc_in<sc_int<32>> address{ "ADDRESS" };		//32-bit input address port
+	//sc_in<sc_int<32>> address{ "ADDRESS" };		//32-bit input address port
+	int address;//{ "ADDRESS" };
 	sc_in<bool> en{ "CE" };						//Boolean input enable port
 	sc_in<bool> mode{ "WE" };					//Boolean input mode (R/W) select port 
 
@@ -57,7 +52,7 @@ public:
 		SC_THREAD(read);
 		sensitive << en, mode, data;
 		SC_THREAD(write);
-		sensitive << en, mode, address;
+		sensitive << en, mode;
 	}
 	SC_HAS_PROCESS(RandomAccessMemory);			//Registering methods as SysC processes.
 
@@ -73,5 +68,6 @@ private:
 	//bool mode;
 	
 	//Data member for keeping memory size
-	int memorySize;
+	//int memorySize;
+	sc_int<32> memorySize;
 };

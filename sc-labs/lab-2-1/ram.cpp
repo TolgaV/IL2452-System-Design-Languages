@@ -84,16 +84,37 @@ void RandomAccessMemory::fileIsRead(int &i) {
 	cout << "OOOOOOOOOOOOOOOOOOOOOOOOOOOOO";
 }
 
-void RandomAccessMemory::read(){
-/*	while (true) {
-		
-		en false;
-	
-	adsdsadasds
-		if(this->en)
-	}*/
+void RandomAccessMemory::read() {
+	int adres = 0;
+	for (;;)
+	{
+		wait();
+		/* Check Address Range */
+		if (this->address > this->memorySize) {
+			cerr << "\nAddress Out of Range\n";
+			cout << "Check Stderr\n";
+			SC_REPORT_ERROR("RAM", "Addresses that are out of range are not loaded!\n");
+		}
+		else continue;
+		/* Check Mode, is WE == 0 */
+		if (this->mode == 1) {
+			while (mode == 1) {
+				wait();
+			}
+		}
+		else {
+			if (this->en == 0) {
+				this->data = 0xFF;
+			}
+			else {
+				adres = this->address;
+				this->data = std::stoi( ra->p_dataAddress[adres] );
+			}
+		}
+	}
 }
 
 void RandomAccessMemory::write() {
-	
+	wait();
+
 }
