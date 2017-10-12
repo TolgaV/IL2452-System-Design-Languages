@@ -27,7 +27,7 @@ void RandomAccessMemory::readFile() {
 	bool eofFlag = false;
 	std::string line;
 	std::string subline;
-
+	cout << "RAM_RAM_RAM_RAM_RAM_RAM\n";
 	cout << "ADDR\tV\tDATA\t\n";
 	cout << "--------------------------\n";
 	/* Loop reading until EOF or bad input */
@@ -84,37 +84,69 @@ void RandomAccessMemory::fileIsRead(int &i) {
 	cout << "OOOOOOOOOOOOOOOOOOOOOOOOOOOOO";
 }
 
-void RandomAccessMemory::read() {
-	int adres = 0;
+void RandomAccessMemory::readRAM() {
+	//int adres = 0;
+	///sc_int<32> adres = 0;
 	for (;;)
 	{
 		wait();
-		/* Check Address Range */
-		if (this->address > this->memorySize) {
+		/* Check Address Range since sc_int < int doesn't work; I use sc_int<32>(0) */
+		if ( (this->address >= this->memorySize) || (/*this->address*/address.read() < this->adresZero) ) {
 			cerr << "\nAddress Out of Range\n";
 			cout << "Check Stderr\n";
 			SC_REPORT_ERROR("RAM", "Addresses that are out of range are not loaded!\n");
 		}
 		else continue;
 		/* Check Mode, is WE == 0 */
-		if (this->mode == 1) {
-			while (mode == 1) {
-				wait();
+		//if (this->mode == 1) {
+		//if (mode == 1) {
+		if (mode.read() == 0) {										//IF WE = 0
+			if (en.read() == 0) {									//IF CE = 0
+				this->data = 0xFF;									//DATA = 0XFF
+			}
+			else {													//IF CE = 1
+				adres = this->address;
+				//Set data port with the content at address
+				this->data = std::stoi(ra->p_dataAddress[adres]);	//DATA = ADDRESS[ADRES]
+				//this->data = ra->p_dataAddress[adres];
 			}
 		}
 		else {
-			if (this->en == 0) {
-				this->data = 0xFF;
-			}
-			else {
-				adres = this->address;
-				this->data = std::stoi( ra->p_dataAddress[adres] );
-			}
+			//wait();
 		}
 	}
 }
 
-void RandomAccessMemory::write() {
-	wait();
-
+void RandomAccessMemory::writeRAM() {
+	//int adres = 0;
+	bool discard = false;
+	for (;;)
+	{
+		wait();
+		/* Check Address Range */
+		if ( (this->address >= this->memorySize) || (this->address < this->adresZero) ) {
+			cerr << "\nAddress Out of Range\n";
+			cout << "Check Stderr\n";
+			SC_REPORT_ERROR("RAM", "Addresses that are out of range are not loaded!\n");
+		}
+		else continue;
+		/* Check Mode, is WE == 0 */
+		if (this->mode == 1) {										//IF WE = 1
+			if (this->en == 0) {									//IF CE = 0
+				discard = true;										//DISCARD OPERATION
+			}
+			else {
+				if (!discard) {
+					adres = this->address;
+					this->data = std::stoi(ra->p_dataAddress[adres]);
+					//ra->p_dataAddress[adres] = this->data;
+				}
+				else
+					cout << "\nWrite Operation Requested is discarded since CE was set to 0\n";
+			}
+		}
+		else {
+			//wait();
+		}
+	}
 }
